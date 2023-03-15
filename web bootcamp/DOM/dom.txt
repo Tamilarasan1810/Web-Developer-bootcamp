@@ -1,0 +1,10 @@
+dom stands for document object model
+dom is javascript representation of webpage
+it's your JS window into the content of the webpage
+it is a bunch of object that you can interact with via JS
+
+getElementById
+getElementsByTagName
+getElementsByClassName
+querySelector
+querySelectorAll

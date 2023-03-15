@@ -1,0 +1,11 @@
+
+
+middle ware:
+we use Morgan as a middle ware to access all http request and response 
+to our system
+
+
+We use ejs-mate to make templating simpler
+
+
+we use Joi as javascript validator for server side validation

@@ -1,0 +1,72 @@
+<%- layout('layouts/boilerPlate') %>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 col-xl-7 offset-xl-2">
+      <div class="card shadow">
+        <img
+          src="https://media.istockphoto.com/id/1399838478/photo/two-factor-authentication-or-2fa-concept-safety-shield-icon-while-access-on-phone-with-laptop.jpg?b=1&s=170667a&w=0&k=20&c=1S4_RKHsoIJ2HxEbumchPCyaV6VcM1s8frnvJGhN_ro="
+          alt=""
+          class="card-img-top"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title">Login</h5>
+          <form action="/login" method="POST" class="validated-form" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="username">Username</label>
+              <input
+                autofocus
+                class="form-control"
+                type="text"
+                id="username"
+                name="username"
+                required
+              />
+              <div class="valid-feedback">Looks Good!</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input
+                class="form-control"
+                type="password"
+                id="password"
+                name="password"
+                required
+              />
+              <div class="valid-feedback">Looks Good!</div>
+            </div>
+            <button class="btn btn-success btn-block">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h1>Login</h1>
+<form action="/login" method="POST" class="validated-form" novalidate>
+  <div class="mb-3">
+    <label class="form-label" for="username">Username</label>
+    <input
+      class="form-control"
+      type="text"
+      id="username"
+      name="username"
+      required
+    />
+    <div class="valid-feedback">Looks Good!</div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="password">Password</label>
+    <input
+      class="form-control"
+      type="password"
+      id="password"
+      name="password"
+      required
+    />
+    <div class="valid-feedback">Looks Good!</div>
+  </div>
+  <button class="btn btn-success">Login</button>
+</form> -->

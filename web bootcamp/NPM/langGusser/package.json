@@ -1,0 +1,18 @@
+
+
+{
+  "name": "langgusser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tamilarasan",
+  "license": "ISC",
+  "dependencies": {
+    "franc": "^6.1.0",
+    "langs": "^2.0.0"
+  },
+  "type": "module"
+}

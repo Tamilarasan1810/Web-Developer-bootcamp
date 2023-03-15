@@ -1,0 +1,113 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <h1 class="text-center">New Campground</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/campgrounds"
+      method="POST"
+      class="validated-form"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="title">Title</label>
+        <input
+          class="form-control"
+          type="text"
+          id="title"
+          name="campground[title]"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="location">Location</label>
+        <input
+          class="form-control"
+          type="text"
+          id="location"
+          name="campground[location]"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Campground Price</label>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">&#8377;</span>
+          <input
+            type="text"
+            name="campground[price]"
+            id="price"
+            class="form-control"
+            placeholder="0.00"
+            aria-describedby="price-label"
+            required
+          />
+          <div class="valid-feedback">Looks Good!</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="campground[description]"
+          required
+        >
+        </textarea>
+        <div class="valid-feedback">Looks Good!</div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Image(s)...</label>
+        <input
+          class="form-control"
+          name="image"
+          type="file"
+          id="image"
+          multiple
+        />
+      </div>
+
+      <!-- <div class="input-group mb-3">
+        <input
+          type="file"
+          class="form-file-input form-control"
+          id="inputGroupFile02"
+        />
+        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+      </div> -->
+
+      <!-- <div class="form-file">
+        <input type="file" name="" id="customFile" class="form-file-input" />
+        <label for="customFile" class="form-file-label">
+          <span class="form-file-text">Choose image(s)...</span>
+          <span class="form-file-button">Browse Images</span>
+        </label>
+      </div> -->
+
+      <!-- <input type="file" name="image" id="" multiple /> -->
+      <!-- <div class="mb-3">
+        <label class="form-label" for="image" for="location">Image Url</label>
+        <input
+          class="form-control"
+          type="text"
+          id="image"
+          name="campground[image]"
+          required
+        />
+        <div class="valid-feedback">Looks Good!</div>
+      </div> -->
+      <div class="mb-3">
+        <button class="btn btn-success">Add Campground</button>
+      </div>
+    </form>
+
+    <a href="/campgrounds" style="text-decoration: none">All Campgrounds</a>
+  </div>
+</div>

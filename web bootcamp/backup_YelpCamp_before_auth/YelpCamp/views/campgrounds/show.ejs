@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show</title>
+  </head>
+  <body> -->
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+  <div class="col-6">
+    <div class="card mb-3" ">
+      <img src="<%= campground.image%>" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= campground.title%></h5>
+        <p class="card-text"><%= campground.description%></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">&#8377; <%= campground.price%>/night</li>
+        <li class="list-group-item text-muted"><%= campground.location%></li>
+      </ul>
+      <div class="card-body">
+        <a
+          href="/campgrounds/<%=campground._id%>/edit "
+          class="card-link btn btn-warning"
+          style="text-decoration: none"
+          >Edit
+        </a>
+        <form
+          class="d-inline"
+          action="/campgrounds/<%=campground._id%>?_mehtod=DELETE"
+          method="POST"
+        >
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      <div class="card-footer text-muted">
+        <a href="/campgrounds" style="text-decoration: none">Go Back</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <form
+      action="/campgrounds/<%=campground._id%>/reviews"
+      method="POST"
+      class="mb-3 validated-form"
+      novalidate
+    >
+      <div class="mb-3">
+        <h3>Leave a Review</h3>
+        <div class="mb-3">
+          <label for="rating" class="form-label">Rating</label>
+          <input
+            type="range"
+            class="form-range"
+            name="review[rating]"
+            min="1"
+            max="5"
+            id="rating"
+          />
+        </div>
+        <label class="form-label" for="body">Review</label>
+        <textarea
+          class="form-control"
+          name="review[body]"
+          id="body"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks Good!</div>
+        <label for=""></label>
+      </div>
+      <button class="btn btn-success">Add Review</button>
+    </form>
+
+    <%for(let review of campground.reviews){%>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Rating: <%=review.rating %></h5>
+        <p class="card-text">Review: <%=review.body %></p>
+        <form
+          class="d-inline"
+          action="/campgrounds/<%=campground._id%>/reviews/<%=review._id%>?_mehtod=DELETE"
+          method="POST"
+        >
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

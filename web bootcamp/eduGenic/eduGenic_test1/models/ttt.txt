@@ -1,0 +1,54 @@
+Admin:
+admin_id, username, password
+permission:
+add and remove user,
+add and remove faculty,
+add and remove course,
+
+Faculty:
+faculty_id, username, password, course_id[]
+permission:
+add and remove course.
+
+Course_db:
+course_id, faculty_id, sub_course_id[]
+
+Sub_course_db:
+sub_course_id, Course_url, course_id, sub_course_serial_no
+
+Student:
+student_id, username, password, enrolled courses[]
+permissions:
+enroll and unenroll course.
+
+Student_course_status:
+suudent_id, course_id, sub_course_id, sub_course_serial_no
+
+
+
+const mongoose = require('mongoose');
+const Schema= mongoose.Schema;
+
+const adminSchema = new Schema({
+
+username:{type:String, required:[true,"Admin Name Must be Provided"]},
+password:{type:String,required:true}
+})
+
+const facultySchema = new Schema({
+username:{type:String, required:[true,"User name Must be provided"]},
+password:{type:String, required:true},
+course_id:[{type:Schema.Type.ToObjectId,ref:'course_db'}]
+})
+
+const course_dbSchema = new Schema({
+coursename:String,
+sub_courses:[{type:Schema.Type.ToObjectId,ref:'sub_course'}]
+})
+
+const sub_course_dbSchema = new Schema({
+course_id:{type:String,required:true},
+course_data:{type:Schema.Type.ToObjectId,ref:'course_db'},
+course_url:String,
+sub_course_serialno:Number
+})
